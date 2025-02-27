@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet" href="/css/style.css")
+  body
+    h1 Games List
+    a(href="/update-cobj") Add a New Game
+    table(border="1")
+      thead
+        tr
+          th Game Name
+          th Model
+          th Color
+          th Release Year
+          th Price ($)
+      tbody
+        each record in records
+          tr
+            td= record.properties.game_name
+            td= record.properties.name
+            td= record.properties.color
+            td= record.properties.release_year ? record.properties.release_year : "N/A"
+            td= record.properties.price ? record.properties.price : "N/A"
